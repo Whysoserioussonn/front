@@ -72,7 +72,7 @@ const NewNoteForm = ({ users }) => {
                     </div>
                 </div>
                 <label className="form__label" htmlFor="title">
-                    Title:</label>
+                    Location:</label>
                 <input
                     className={`form__input ${validTitleClass}`}
                     id="title"
@@ -84,7 +84,7 @@ const NewNoteForm = ({ users }) => {
                 />
 
                 <label className="form__label" htmlFor="text">
-                    Text:</label>
+                    Problem:</label>
                 <textarea
                     className={`form__input form__input--text ${validTextClass}`}
                     id="text"

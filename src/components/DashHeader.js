@@ -12,6 +12,7 @@ import { useNavigate, Link, useLocation } from "react-router-dom";
 import { useSendLogoutMutation } from "../features/auth/authApiSlice";
 
 import useAuth from "../hooks/useAuth";
+import PacmanLoader from 'react-spinners/PacmanLoader'
 
 const DASH_REGEX = /^\/dash(\/)?$/;
 const NOTES_REGEX = /^\/dash\/notes(\/)?$/;
@@ -114,7 +115,11 @@ const DashHeader = () => {
 
   let buttonContent
     if (isLoading) {
-        buttonContent = <p>Logging Out...</p>
+      buttonContent = <PacmanLoader   color="#ed043a"
+      loading
+      size={49}
+      speedMultiplier={-6}
+    />
     } else {
         buttonContent = (
             <>
@@ -134,7 +139,7 @@ const DashHeader = () => {
       <header className="dash-header">
         <div className={`dash-header__container ${dashClass}`}>
           <Link to="/dash">
-            <h1 className="dash-header__title">techNotes</h1>
+            <h1 className="dash-header__title">Spectrum Maintenance 🛠️</h1>
           </Link>
           <nav className="dash-header__nav">           
                 {buttonContent}

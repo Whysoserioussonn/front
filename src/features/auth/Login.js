@@ -6,6 +6,8 @@ import { setCredentials } from "./authSlice";
 import { useLoginMutation } from "./authApiSlice";
 
 import usePersist from '../../hooks/usePersist'
+import PacmanLoader from 'react-spinners/PacmanLoader'
+
 
 const Login = () => {
   const userRef = useRef();
@@ -57,7 +59,11 @@ const Login = () => {
 
   const errClass = errMsg ? "errmsg" : "offscreen";
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <PacmanLoader color="#ed043a"
+  loading
+  size={49}
+  speedMultiplier={-6}
+/>
 
   const content = (
     <section className="public">

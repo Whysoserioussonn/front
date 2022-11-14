@@ -1,5 +1,6 @@
 import { useGetUsersQuery } from "./usersApiSlice"
 import User from './User'
+import PacmanLoader from 'react-spinners/PacmanLoader'
 
 const UsersList = () => {
 
@@ -17,7 +18,11 @@ const UsersList = () => {
 
     let content
 
-    if (isLoading) content = <p>Loading...</p>
+    if (isLoading) content = <PacmanLoader color="#ed043a"
+    loading
+    size={49}
+    speedMultiplier={-6}
+  />
 
     if (isError) {
         content = <p className="errmsg">{error?.data?.message}</p>

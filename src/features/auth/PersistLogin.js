@@ -4,6 +4,7 @@ import { useRefreshMutation } from "./authApiSlice"
 import usePersist from "../../hooks/usePersist"
 import { useSelector } from 'react-redux'
 import { selectCurrentToken } from "./authSlice"
+import PacmanLoader from 'react-spinners/PacmanLoader'
 
 const PersistLogin = () => {
 
@@ -54,7 +55,11 @@ const PersistLogin = () => {
         content = <Outlet />
     } else if (isLoading) { //persist: yes, token: no
         console.log('loading')
-        content = <p>Loading...</p>
+        content = <PacmanLoader color="#ed043a"
+        loading
+        size={49}
+        speedMultiplier={-6}
+      />
     } else if (isError) { //persist: yes, token: no
         console.log('error')
         content = (

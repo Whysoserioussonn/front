@@ -1,6 +1,7 @@
 import { useGetNotesQuery } from "./notesApiSlice"
 import Note from "./Note"
 import useAuth from "../../hooks/useAuth"
+import PacmanLoader from 'react-spinners/PacmanLoader'
 
 const NotesList = () => {
 
@@ -20,7 +21,11 @@ const NotesList = () => {
 
     let content
 
-    if (isLoading) content = <p>Loading...</p>
+    if (isLoading) content = <PacmanLoader color="#ed043a"
+    loading
+    size={49}
+    speedMultiplier={-6}
+  />
 
     if (isError) {
         content = <p className="errmsg">{error?.data?.message}</p>
@@ -42,11 +47,11 @@ const NotesList = () => {
             <table className="table table--notes">
                 <thead className="table__thead">
                     <tr>
-                        <th scope="col" className="table__th note__status">Username</th>
+                        <th scope="col" className="table__th note__status">Repair Order</th>
                         <th scope="col" className="table__th note__created">Created</th>
                         <th scope="col" className="table__th note__updated">Updated</th>
-                        <th scope="col" className="table__th note__title">Title</th>
-                        <th scope="col" className="table__th note__username">Owner</th>
+                        <th scope="col" className="table__th note__title">Location</th>
+                        <th scope="col" className="table__th note__username">Assigned to</th>
                         <th scope="col" className="table__th note__edit">Edit</th>
                     </tr>
                 </thead>
