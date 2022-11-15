@@ -66,39 +66,45 @@ const Login = () => {
 />
 
   const content = (
-    <section className="public">
+    <section class="my-3">
       <header>
-        <h1>Employee Login</h1>
+        <h1 class="text-yellow-300 font-bold text-5xl py-2 mx-2" >Spectrum Employee Login 👨‍🔧</h1>
       </header>
-      <main className="login">
+      <main >
+      <p class="text-yellow-300">___________________________________________________________________________________</p>
+      <p class="text-yellow-300">___________________________________________________________________________________</p>
         <p ref={errRef} className={errClass} aria-live="assertive">{errMsg}</p>
 
-        <form className="form" onSubmit={handleSubmit}>
-          <label htmlFor="username">Username:</label>
+        <form 
+          class="text-white mx-2" 
+          onSubmit={handleSubmit}>
+          <label htmlFor="username">Username:</label><br />
           <input
-            className="form__input"
+            class="text-black py-2 px-7 rounded-full my-2 "
             type="text"
             id="username"
+            placeholder="Username"
             ref={userRef}
             value={username}
             onChange={handleUserInput}
             autoComplete="off"
             required
-          />
+          /><br />
 
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">Password:</label><br />
           <input
-            className="form__input"
+          class="text-black py-2 px-7 rounded-full my-2 "
             type="password"
             id="password"
+            placeholder="Password"
             onChange={handlePwdInput}
             value={password}
             required
-          />
-          <button className="form__submit-button">Sign In</button>
+          /><br />
+          <button class="bg-gray-300 text-blue-700 hover:bg-green-400 hover:text-white px-4 ml-44 rounded-md my-3 ">Sign In</button>
 
 
-          <label htmlFor="persist" className="form__persist">
+          <label htmlFor="persist" className=" flex">
                         <input
                             type="checkbox"
                             className="form__checkbox"
@@ -108,11 +114,18 @@ const Login = () => {
                         />
                         Trust This Device
                     </label>
+                    
         </form>
+        <p class="text-yellow-300">___________________________________________________________________________________</p>
+        <p class="text-yellow-300">___________________________________________________________________________________</p>
       </main>
+      
       <footer>
-        <Link to="/">Back to Home</Link>
-      </footer>
+            <div >
+                <Link to="/" class=" mb-5 absolute bottom-0 left-0  ..."> <button type="button" class="inline-block px-6 py-2.5 bg-white
+                 text-blue-700 font-bold text-lg leading-tight uppercase rounded shadow-md hover:text-black hover:bg-green-300 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Home Page</button></Link>
+                </div>
+            </footer>
     </section>
   );
 

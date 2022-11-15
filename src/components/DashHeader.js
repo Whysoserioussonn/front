@@ -1,18 +1,15 @@
 import { useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFileCirclePlus,
-  faFilePen,
-  faUserGear,
-  faUserPlus,
-  faRightFromBracket,
-} from "@fortawesome/free-solid-svg-icons";
 import { useNavigate, Link, useLocation } from "react-router-dom";
-
 import { useSendLogoutMutation } from "../features/auth/authApiSlice";
-
 import useAuth from "../hooks/useAuth";
 import PacmanLoader from 'react-spinners/PacmanLoader'
+
+import {FaUserPlus} from "react-icons/fa"
+import {RiLogoutCircleRLine} from "react-icons/ri"
+import {HiUsers} from "react-icons/hi"
+import {BsCardChecklist} from "react-icons/bs"
+import {VscNewFile} from "react-icons/vsc"
+
 
 const DASH_REGEX = /^\/dash(\/)?$/;
 const NOTES_REGEX = /^\/dash\/notes(\/)?$/;
@@ -55,11 +52,11 @@ const DashHeader = () => {
   if (NOTES_REGEX.test(pathname)) {
     newNoteButton = (
       <button
-        className="icon-button"
+      class="text-5xl text-yellow-300 hover:text-green-500 hover:scale-125"
         title="New Note"
         onClick={onNewNoteClicked}
       >
-        <FontAwesomeIcon icon={faFileCirclePlus} />
+        <VscNewFile/>
       </button>
     );
   }
@@ -68,11 +65,11 @@ const DashHeader = () => {
   if (USERS_REGEX.test(pathname)) {
     newUserButton = (
       <button
-        className="icon-button"
+      class="text-5xl text-yellow-300 hover:text-green-500 hover:scale-125"
         title="New User"
         onClick={onNewUserClicked}
       >
-        <FontAwesomeIcon icon={faUserPlus} />
+        <FaUserPlus />
       </button>
     );
   }
@@ -81,8 +78,11 @@ const DashHeader = () => {
   if (isManager || isAdmin) {
     if (!USERS_REGEX.test(pathname) && pathname.includes("/dash")) {
       userButton = (
-        <button className="icon-button" title="Users" onClick={onUsersClicked}>
-          <FontAwesomeIcon icon={faUserGear} />
+        <button 
+        class="text-5xl text-yellow-300 hover:text-green-500 hover:scale-125"
+        title="Users" 
+        onClick={onUsersClicked}>
+          <HiUsers />
         </button>
       );
     }
@@ -92,22 +92,22 @@ const DashHeader = () => {
   if (!NOTES_REGEX.test(pathname) && pathname.includes("/dash")) {
     notesButton = (
       <button
-      className="icon-button"
+      class="text-5xl text-yellow-300 hover:text-green-500 hover:scale-125"
        title="Notes"
        onClick={onNotesClicked}
        >
-        <FontAwesomeIcon icon={faFilePen} />
+        <BsCardChecklist />
       </button>
     );
   }
 
   const logoutButton = (
     <button
-     className="icon-button" 
+    class="text-5xl text-yellow-300 hover:text-green-500 hover:scale-125"
      title="Logout" 
      onClick={onLogoutClicked}
      >
-      <FontAwesomeIcon icon={faRightFromBracket} />
+      <RiLogoutCircleRLine />
     </button>
   );
 
@@ -139,16 +139,19 @@ const DashHeader = () => {
       <header className="dash-header">
         <div className={`dash-header__container ${dashClass}`}>
           <Link to="/dash">
-            <h1 className="dash-header__title">Spectrum Maintenance 🛠️</h1>
+            <h1 class="text-yellow-300 text-5xl py-2 mt-2 mx-2" >Spectrum Maintenance Menu📋</h1>
           </Link>
           <nav className="dash-header__nav">           
                 {buttonContent}
           </nav>
         </div>
       </header>
+      
     </>
+    
   );
 
   return content;
+  
 };
 export default DashHeader;
