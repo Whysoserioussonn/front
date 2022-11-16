@@ -45,14 +45,14 @@ const DashHeader = () => {
     !NOTES_REGEX.test(pathname) &&
     !USERS_REGEX.test(pathname)
   ) {
-    dashClass = "dash-header__container--small";
+    dashClass = "max-w-3xl";
   }
 
   let newNoteButton = null;
   if (NOTES_REGEX.test(pathname)) {
     newNoteButton = (
       <button
-      class="text-5xl text-yellow-300 hover:text-green-500 hover:scale-125"
+      class="text-5xl text-amber-300 hover:text-green-500 hover:scale-125"
         title="New Note"
         onClick={onNewNoteClicked}
       >
@@ -65,7 +65,7 @@ const DashHeader = () => {
   if (USERS_REGEX.test(pathname)) {
     newUserButton = (
       <button
-      class="text-5xl text-yellow-300 hover:text-green-500 hover:scale-125"
+      class="text-5xl text-amber-300 hover:text-green-500 hover:scale-125"
         title="New User"
         onClick={onNewUserClicked}
       >
@@ -79,7 +79,7 @@ const DashHeader = () => {
     if (!USERS_REGEX.test(pathname) && pathname.includes("/dash")) {
       userButton = (
         <button 
-        class="text-5xl text-yellow-300 hover:text-green-500 hover:scale-125"
+        class="text-5xl text-amber-300 hover:text-green-500 hover:scale-125"
         title="Users" 
         onClick={onUsersClicked}>
           <HiUsers />
@@ -92,7 +92,7 @@ const DashHeader = () => {
   if (!NOTES_REGEX.test(pathname) && pathname.includes("/dash")) {
     notesButton = (
       <button
-      class="text-5xl text-yellow-300 hover:text-green-500 hover:scale-125"
+      class="text-5xl text-amber-300 hover:text-green-500 hover:scale-125"
        title="Notes"
        onClick={onNotesClicked}
        >
@@ -103,7 +103,7 @@ const DashHeader = () => {
 
   const logoutButton = (
     <button
-    class="text-5xl text-yellow-300 hover:text-green-500 hover:scale-125"
+    class="text-5xl text-amber-300 hover:text-green-500 hover:scale-125"
      title="Logout" 
      onClick={onLogoutClicked}
      >
@@ -136,12 +136,12 @@ const DashHeader = () => {
     <>
       <p className={errClass}>{error?.data?.message}</p>
       
-      <header className="dash-header">
-        <div className={`dash-header__container ${dashClass}`}>
+      <header className="sticky top-0 p-2 border-b-2 border-red-500">
+        <div className={`flex flex-row flex-nowrap justify-between items-center gap-2 ${dashClass}`}>
           <Link to="/dash">
-            <h1 class="text-yellow-300 text-5xl py-2 mt-2 mx-2" >Spectrum Maintenance Menu📋</h1>
+            <h1 class="text-amber-300 text-5xl py-1 mt-2 mx-2" >Spectrum Maintenance Menu📋</h1>
           </Link>
-          <nav className="dash-header__nav">           
+          <nav className="flex flex-row flex-nowrap justify-end gap-2">           
                 {buttonContent}
           </nav>
         </div>

@@ -4,13 +4,13 @@ const Public = () => {
     const content = (
         <section class="  bg-contain bg-center bg-no-repeat  bg-[url('./img/baxterdog.webp')]">
             <header>
-                <h1 class="text-yellow-300 text-5xl py-2 mt-2 mx-2" >Welcome to <span class="whitespace-nowrap">Spectrum Maintenence 🛠️</span></h1>
+                <h1 class="text-amber-300 text-5xl py-2 mt-2 mx-2" >Welcome to <span class="whitespace-nowrap">Spectrum Maintenence 🛠️</span></h1>
             </header>
             <main class="mx-2">
-                <p class="text-yellow-300">___________________________________________________________________________________</p>
-                <p class="text-yellow-300">___________________________________________________________________________________</p>
-                <p class="text-yellow-400 " > All employees are required to Login.</p>
-                <address class="text-yellow-400">
+                <p class="text-amber-300">___________________________________________________________________________________</p>
+                <p class="text-amber-300">___________________________________________________________________________________</p>
+                <p class="text-amber-400 " > All employees are required to Login.</p>
+                <address class="text-amber-400">
                    Directions:<br />
                     Login at the Bottom Lefthand Corner<br />
                     Fillout Repair Note<br />
@@ -21,8 +21,8 @@ const Public = () => {
                 </address>
                 <br />
                 <p class="text-white">Ask for BAXTER!</p>
-                <p class="text-yellow-300">___________________________________________________________________________________</p>
-                <p class="text-yellow-300">___________________________________________________________________________________</p>
+                <p class="text-amber-300">___________________________________________________________________________________</p>
+                <p class="text-amber-300">___________________________________________________________________________________</p>
             </main>
             <footer>
             <div >

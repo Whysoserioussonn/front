@@ -15,7 +15,7 @@ const DashFooter = () => {
     if (pathname !== '/dash') {
         goHomeButton = (
             <button
-                className="text-yellow-300 text-4xl"
+                className="text-red-500 text-2xl scale-125 hover:text-white "
                 title="Home"
                 onClick={onGoHomeClicked}
             >
@@ -25,7 +25,7 @@ const DashFooter = () => {
     }
 
     const content = (
-        <footer className="dash-footer">
+        <footer className=" flex flex-row flex-nowrap text-base text-violet-600 sticky bottom-0 bg-amber-400 p-2 border-t-4  border-red-600 gap-4 ">
             {goHomeButton}
             <p>Current User: {username}</p>
             <p>Status: {status}</p>

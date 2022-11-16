@@ -97,7 +97,7 @@ const NewUserForm = () => {
                 <label  htmlFor="username">
                     Username: <span class="whitespace-nowrap">[3-20 letters]</span></label>
                 <input
-                    className={`form__input ${validUserClass}`}
+                    className={`rounded-2xl p-2 text-black ${validUserClass}`}
                     id="username"
                     name="username"
                     type="text"
@@ -109,7 +109,7 @@ const NewUserForm = () => {
                 <label  htmlFor="password">
                     Password: <span class="whitespace-nowrap">[4-12 chars incl. !@#$%]</span></label>
                 <input
-                    className={`form__input ${validPwdClass}`}
+                    className={`rounded-2xl p-2 text-black ${validPwdClass}`}
                     id="password"
                     name="password"
                     type="password"
@@ -122,12 +122,12 @@ const NewUserForm = () => {
                 <select
                     id="roles"
                     name="roles"
-                    className={`form__select ${validRolesClass}`}
+                    className={`w-fit p-2 text-red-700 font-bold hover:bg-green-400 ${validRolesClass}`}
                     multiple={true}
                     size="3"
                     value={roles}
                     onChange={onRolesChanged}
-                >
+                > 
                     {options}
                 </select>
 

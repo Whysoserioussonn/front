@@ -36,11 +36,11 @@ const UsersList = () => {
 
         content = (
             <table className="table table--users">
-                <thead className="table__thead">
+                <thead class="sticky top-0">
                     <tr>
-                        <th scope="col" className="table__th user__username">Username</th>
-                        <th scope="col" className="table__th user__roles">Roles</th>
-                        <th scope="col" className="table__th user__edit">Edit</th>
+                        <th scope="col" class="bg-amber-300 text-violet-700 text-left p-2 border-2 border-violet-400 font-bold">Username</th>
+                        <th scope="col" class="bg-amber-300 text-violet-700 text-left p-2 border-2 border-violet-400 font-bold">Roles</th>
+                        <th scope="col" class="bg-amber-300 text-violet-700 text-left p-2 border-2 border-violet-400 font-bold">Edit</th>
                     </tr>
                 </thead>
                 <tbody>

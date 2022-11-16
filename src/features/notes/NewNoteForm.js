@@ -73,7 +73,7 @@ const NewNoteForm = ({ users }) => {
                 <label  htmlFor="title">
                     Location:</label>
                 <input
-                    className={`form__input ${validTitleClass}`}
+                    className={`rounded-2xl p-2 text-black ${validTitleClass}`}
                     id="title"
                     name="title"
                     type="text"
@@ -85,19 +85,19 @@ const NewNoteForm = ({ users }) => {
                 <label  htmlFor="text">
                     Problem:</label>
                 <textarea
-                    className={`form__input h-40 ${validTextClass}`}
+                    className={`rounded-2xl p-2 text-black h-40 ${validTextClass}`}
                     id="text"
                     name="text"
                     value={text}
                     onChange={onTextChanged}
                 />
 
-                <label className=" form__checkbox-container" htmlFor="username">
+                <label class=" flex items-center w-fit gap-2" htmlFor="username">
                     ASSIGNED TO:</label>
                 <select
                     id="username"
                     name="username"
-                    className="form__select"
+                    class="w-fit p-1 text-red-500"
                     value={userId}
                     onChange={onUserIdChanged}
                 >

@@ -130,7 +130,7 @@ const EditUserForm = ({ user }) => {
                 <label  htmlFor="username">
                     Username: <span class="whitespace-nowrap">[3-20 letters]</span></label>
                 <input
-                    className={`form__input ${validUserClass}`}
+                    className={`rounded-2xl p-2 text-black ${validUserClass}`}
                     id="username"
                     name="username"
                     type="text"
@@ -142,7 +142,7 @@ const EditUserForm = ({ user }) => {
                 <label  htmlFor="password">
                     Password: <span class="whitespace-nowrap">[empty = no change]</span> <span class="whitespace-nowrap">[4-12 chars incl. !@#$%]</span></label>
                 <input
-                    className={`form__input ${validPwdClass}`}
+                    className={`rounded-2xl p-2 text-black ${validPwdClass}`}
                     id="password"
                     name="password"
                     type="password"
@@ -150,10 +150,10 @@ const EditUserForm = ({ user }) => {
                     onChange={onPasswordChanged}
                 />
 
-                <label className=" form__checkbox-container" htmlFor="user-active">
+                <label class=" flex items-center w-fit gap-2" htmlFor="user-active">
                     ACTIVE:
                     <input
-                        className="form__checkbox"
+                        class="w-6 h-6"
                         id="user-active"
                         name="user-active"
                         type="checkbox"
@@ -167,8 +167,8 @@ const EditUserForm = ({ user }) => {
                 <select
                     id="roles"
                     name="roles"
-                    className={`form__select ${validRolesClass}`}
-                    multiple={true}
+                    className={`w-fit p-2 text-red-700 font-bold hover:bg-green-400 ${validRolesClass}`}                    
+                    multiple="true"
                     size="3"
                     value={roles}
                     onChange={onRolesChanged}

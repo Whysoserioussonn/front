@@ -24,14 +24,14 @@ const Note = ({ noteId }) => {
                         : <span class="text-red-500">Open</span>
                     }
                 </td>
-                <td class="bg-white p-2 border-2 broder-solid text-left note__created">{created}</td>
-                <td class="bg-white p-2 border-2 broder-solid text-left note__updated">{updated}</td>
-                <td class="bg-white p-2 border-2 broder-solid text-left note__title">{note.title}</td>
-                <td class="bg-white p-2 border-2 broder-solid text-left note__username">{note.username}</td>
+                <td class="bg-white p-2 border-2 broder-solid text-left block">{created}</td>
+                <td class="bg-white p-2 border-2 broder-solid text-left block">{updated}</td>
+                <td class="bg-white p-2 border-2 broder-solid text-left ">{note.title}</td>
+                <td class="bg-white p-2 border-2 broder-solid text-left block">{note.username}</td>
 
                 <td class="bg-white p-2 border-2 broder-solid text-left">
                     <button
-                        class="text-4xl text-red-700 hover:scale-150 hover:text-blue-700 pl-12 pt-4"
+                        class="text-4xl text-violet-700 hover:scale-150 hover:text-red-700 pl-12 pt-4"
                         onClick={handleEdit}
                     >
                         <FaEdit/>

@@ -14,7 +14,7 @@ const User = ({ userId }) => {
 
         const userRolesString = user.roles.toString().replaceAll(',', ', ')
 
-        const cellStatus = user.active ? 'bg-green-700 text-white' : 'bg-red-700 text-yellow-300'
+        const cellStatus = user.active ? 'bg-green-700 text-white' : 'bg-red-700 text-amber-300'
 
         return (
             <tr>
@@ -22,7 +22,7 @@ const User = ({ userId }) => {
                 <td class={`"bg-white p-2 border-2 broder-solid text-left ${cellStatus}`}>{userRolesString}</td>
                 <td class={`"bg-white p-2 border-2 broder-solid pl-24  ${cellStatus}`}>
                     <button
-                        class=" w-48px h-48px text-4xl hover:scale-150 hover:text-blue-700 pl-6"
+                        class=" w-48px h-48px text-4xl hover:scale-150 text-violet-700 hover:text-amber-400 pl-6"
                         onClick={handleEdit}
                     >
                         <FaEdit />

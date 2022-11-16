@@ -68,11 +68,11 @@ const Login = () => {
   const content = (
     <section class="my-3">
       <header>
-        <h1 class="text-yellow-300 font-bold text-5xl py-2 mx-2" >Spectrum Employee Login 👨‍🔧</h1>
+        <h1 class="text-amber-300 font-bold text-5xl py-2 mx-2" >Spectrum Employee Login 👨‍🔧</h1>
       </header>
       <main >
-      <p class="text-yellow-300">___________________________________________________________________________________</p>
-      <p class="text-yellow-300">___________________________________________________________________________________</p>
+      <p class="text-amber-300">___________________________________________________________________________________</p>
+      <p class="text-amber-300">___________________________________________________________________________________</p>
         <p ref={errRef} className={errClass} aria-live="assertive">{errMsg}</p>
 
         <form 
@@ -104,10 +104,10 @@ const Login = () => {
           <button class="bg-gray-300 text-blue-700 hover:bg-green-400 hover:text-white px-4 ml-44 rounded-md my-3 ">Sign In</button>
 
 
-          <label htmlFor="persist" className=" flex">
+          <label htmlFor="persist" className=" flex items-center max-w-full gap-2">
                         <input
                             type="checkbox"
-                            className="form__checkbox"
+                            class="w-6 h-6"
                             id="persist"
                             onChange={handleToggle}
                             checked={persist}
@@ -116,8 +116,8 @@ const Login = () => {
                     </label>
                     
         </form>
-        <p class="text-yellow-300">___________________________________________________________________________________</p>
-        <p class="text-yellow-300">___________________________________________________________________________________</p>
+        <p class="text-amber-300">___________________________________________________________________________________</p>
+        <p class="text-amber-300">___________________________________________________________________________________</p>
       </main>
       
       <footer>

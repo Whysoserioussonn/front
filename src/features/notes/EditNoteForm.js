@@ -96,7 +96,7 @@ const EditNoteForm = ({ note, users }) => {
 
             <form class="flex flex-col flex-nowrap max-w-screen-md gap-3" onSubmit={e => e.preventDefault()}>
                 <div class="flex justify-between items-center">
-                    <h2>Repair Note #{note.ticket}</h2>
+                    <h2>Edit Repair Note #{note.ticket}</h2>
                     <div>
                         <button
                             class="mt-2 text-4xl hover:scale-125 hover:text-blue-600 mr-2"
@@ -112,7 +112,7 @@ const EditNoteForm = ({ note, users }) => {
                 <label  htmlFor="note-title">
                     Location:</label>
                 <input
-                    className={`form__input ${validTitleClass}`}
+                    className={`rounded-2xl p-2 text-black ${validTitleClass}`}
                     id="note-title"
                     name="title"
                     type="text"
@@ -124,18 +124,18 @@ const EditNoteForm = ({ note, users }) => {
                 <label  htmlFor="note-text">
                     Problem:</label>
                 <textarea
-                    className={`form__input h-40 ${validTextClass}`}
+                    className={`rounded-2xl p-2 text-black h-40 ${validTextClass}`}
                     id="note-text"
                     name="text"
                     value={text}
                     onChange={onTextChanged}
                 />
-                <div className="form__row">
-                    <div className="form__divider">
-                        <label className=" form__checkbox-container" htmlFor="note-completed">
+                <div class="flex flex-nowrap gap-8">
+                    <div class="flex flex-col gap-2">
+                        <label class=" flex items-center w-fit gap-2" htmlFor="note-completed">
                             WORK COMPLETE:
-                            <input
-                                className="form__checkbox"
+                            <input 
+                                class="w-6 h-6"
                                 id="note-completed"
                                 name="completed"
                                 type="checkbox"
@@ -144,21 +144,21 @@ const EditNoteForm = ({ note, users }) => {
                             />
                         </label>
 
-                        <label className=" form__checkbox-container" htmlFor="note-username">
+                        <label class=" flex items-center w-fit gap-2" htmlFor="note-username">
                             ASSIGNED TO:</label>
                         <select
                             id="note-username"
                             name="username"
-                            className="form__select"
+                            class="w-fit p-1 text-red-500"
                             value={userId}
                             onChange={onUserIdChanged}
                         >
                             {options}
                         </select>
                     </div>
-                    <div className="form__divider">
-                        <p className="form__created">Created:<br />{created}</p>
-                        <p className="form__updated">Updated:<br />{updated}</p>
+                    <div class="flex flex-col gap-2">
+                        <p > Created:<br />{created}</p>
+                        <p > Updated:<br />{updated}</p>
                     </div>
                 </div>
             </form>
