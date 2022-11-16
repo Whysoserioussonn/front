@@ -16,6 +16,10 @@ const Public = () => {
                     Fillout Repair Note<br />
                     Update Note as needed<br />
                     When complete, checkoff box. Manager will review.<br />
+                    For new employees/testers, you can login in as:<br/>
+                    username: newbie <br/>
+                    password: newbie123 <br/>
+                    Assign the repair note to newbie to see the repair note. <br/>
                     Any issues, please call <br />
                     (555) 867-5309<br />                  
                 </address>
