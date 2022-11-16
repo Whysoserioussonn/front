@@ -50,17 +50,17 @@ const NewNoteForm = ({ users }) => {
     })
 
     const errClass = isError ? "errmsg" : "offscreen"
-    const validTitleClass = !title ? "form__input--incomplete" : ''
-    const validTextClass = !text ? "form__input--incomplete" : ''
+    const validTitleClass = !title ? "border-2 border-red-500 outline-2 outline-cyan-500" : ''
+    const validTextClass = !text ? "border-2 border-red-500 outline-2 outline-cyan-500" : ''
 
     const content = (
         <>
             <p className={errClass}>{error?.data?.message}</p>
 
-            <form className="form" onSubmit={onSaveNoteClicked}>
-                <div className="form__title-row">
+            <form class="flex flex-col flex-nowrap max-w-screen-md gap-3" onSubmit={onSaveNoteClicked}>
+                <div class="flex justify-between items-center">
                     <h2>New Note</h2>
-                    <div className="form__action-buttons">
+                    <div class="gap-2 mr-2 flex justify-end items-center static">
                         <button
                              class="mt-2 text-4xl hover:scale-125 hover:text-blue-600 mr-2"
                             title="Save"
@@ -70,7 +70,7 @@ const NewNoteForm = ({ users }) => {
                         </button>
                     </div>
                 </div>
-                <label className="form__label" htmlFor="title">
+                <label  htmlFor="title">
                     Location:</label>
                 <input
                     className={`form__input ${validTitleClass}`}
@@ -82,17 +82,17 @@ const NewNoteForm = ({ users }) => {
                     onChange={onTitleChanged}
                 />
 
-                <label className="form__label" htmlFor="text">
+                <label  htmlFor="text">
                     Problem:</label>
                 <textarea
-                    className={`form__input form__input--text ${validTextClass}`}
+                    className={`form__input h-40 ${validTextClass}`}
                     id="text"
                     name="text"
                     value={text}
                     onChange={onTextChanged}
                 />
 
-                <label className="form__label form__checkbox-container" htmlFor="username">
+                <label className=" form__checkbox-container" htmlFor="username">
                     ASSIGNED TO:</label>
                 <select
                     id="username"

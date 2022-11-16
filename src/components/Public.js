@@ -1,17 +1,16 @@
 import { Link } from 'react-router-dom'
 
-
 const Public = () => {
     const content = (
-        <section>
+        <section class="  bg-contain bg-center bg-no-repeat  bg-[url('./img/baxterdog.webp')]">
             <header>
-                <h1 class="text-yellow-300 text-5xl py-2 mt-2 mx-2" >Welcome to <span className="nowrap">Spectrum Maintenence 🛠️</span></h1>
+                <h1 class="text-yellow-300 text-5xl py-2 mt-2 mx-2" >Welcome to <span class="whitespace-nowrap">Spectrum Maintenence 🛠️</span></h1>
             </header>
             <main class="mx-2">
                 <p class="text-yellow-300">___________________________________________________________________________________</p>
                 <p class="text-yellow-300">___________________________________________________________________________________</p>
-                <p class="text-white mt-5 " > All employees are required to Login.</p>
-                <address class="text-white">
+                <p class="text-yellow-400 " > All employees are required to Login.</p>
+                <address class="text-yellow-400">
                    Directions:<br />
                     Login at the Bottom Lefthand Corner<br />
                     Fillout Repair Note<br />
@@ -21,7 +20,7 @@ const Public = () => {
                     (555) 867-5309<br />                  
                 </address>
                 <br />
-                <p class="text-white">Ask for Superman or Batman!</p>
+                <p class="text-white">Ask for BAXTER!</p>
                 <p class="text-yellow-300">___________________________________________________________________________________</p>
                 <p class="text-yellow-300">___________________________________________________________________________________</p>
             </main>

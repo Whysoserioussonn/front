@@ -1,9 +1,7 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPenToSquare } from "@fortawesome/free-solid-svg-icons"
 import { useNavigate } from 'react-router-dom'
-
 import { useSelector } from 'react-redux'
 import { selectNoteById } from './notesApiSlice'
+import {FaEdit} from "react-icons/fa"
 
 const Note = ({ noteId }) => {
 
@@ -19,24 +17,24 @@ const Note = ({ noteId }) => {
         const handleEdit = () => navigate(`/dash/notes/${noteId}`)
 
         return (
-            <tr className="table__row">
-                <td className="table__cell note__status">
+            <tr >
+                <td class="bg-white p-2 border-2 broder-solid text-left font-bold ">
                     {note.completed
-                        ? <span className="note__status--completed">Completed</span>
-                        : <span className="note__status--open">Open</span>
+                        ? <span class="text-green-500">Completed</span>
+                        : <span class="text-red-500">Open</span>
                     }
                 </td>
-                <td className="table__cell note__created">{created}</td>
-                <td className="table__cell note__updated">{updated}</td>
-                <td className="table__cell note__title">{note.title}</td>
-                <td className="table__cell note__username">{note.username}</td>
+                <td class="bg-white p-2 border-2 broder-solid text-left note__created">{created}</td>
+                <td class="bg-white p-2 border-2 broder-solid text-left note__updated">{updated}</td>
+                <td class="bg-white p-2 border-2 broder-solid text-left note__title">{note.title}</td>
+                <td class="bg-white p-2 border-2 broder-solid text-left note__username">{note.username}</td>
 
-                <td className="table__cell">
+                <td class="bg-white p-2 border-2 broder-solid text-left">
                     <button
-                        className="icon-button table__button"
+                        class="text-4xl text-red-700 hover:scale-150 hover:text-blue-700 pl-12 pt-4"
                         onClick={handleEdit}
                     >
-                        <FontAwesomeIcon icon={faPenToSquare} />
+                        <FaEdit/>
                     </button>
                 </td>
             </tr>

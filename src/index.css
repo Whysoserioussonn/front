@@ -15,7 +15,7 @@
 :root {
   /* COLORS */
   --BGCOLOR: #0F172A;
-  --BORDER-COLOR: #FFF;
+  --BORDER-COLOR: red;
   --COLOR: rgb(214, 8, 8);
   --ERROR: firebrick;
   --ACTIVE: green;
@@ -31,35 +31,13 @@
 }
 
 /* || UTILITY CLASSES */
-.errmsg {
-  display: inline-block;
-  background-color: var(--TABLE-BGCOLOR);
-  color: var(--ERROR);
-  padding: 0.25em;
-  margin-bottom: 0.5em;
-}
+
 
 .errmsg a:any-link {
   color: var(--ERROR);
   text-decoration: underline;
 }
 
-.nowrap {
-  white-space: nowrap;
-}
-
-.icon-button {
-  width: 48px;
-  height: 48px;
-  font-size: 2.5rem;
-  background-color: transparent;
-  border: none;
-  color: var(--COLOR);
-  display: grid;
-  place-content: center;
-}
-
-.icon-button:hover,
 .icon-button:focus-visible {
   transform: scale(1.2);
 }
@@ -74,11 +52,12 @@ body {
   font-family: 'Nunito', sans-serif;
   min-height: 100vh;
   background-color: var(--BGCOLOR);
-  color: white;
-  background-image: url('./img/background.jpg');
+  color:white;
+  /* background-image: url('./img/baxterdog.webp');
   background-size: cover;
-  background-position: top right;
   background-blend-mode: multiply;
+   */
+ 
 }
 
 input,
@@ -221,27 +200,16 @@ tr {
   z-index: 1;
 }
 
-.table__th,
-.table__cell {
+.table__th {
   background-color: var(--TABLE-BGCOLOR);
   text-align: left;
   border: 1px solid var(--TABLE-COLOR);
   padding: 0.5em;
 }
 
-.table__cell:last-child {
-  display: grid;
-  place-content: center;
-}
 
-.table__cell--inactive {
-  color: yellow;
-  background-color: var(--INACTIVE);
-}
-.table__cell--active {
-  color: white;
-  background-color: var(--ACTIVE);
-}
+
+
 
 /* ||  NOTE */
 
@@ -266,12 +234,6 @@ tr {
 
 /* || FORM - GENERAL */
 
-.form {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 0.75em;
-  max-width: 800px;
-}
 
 .form__checkbox-container {
   display: flex;
@@ -287,25 +249,15 @@ tr {
   gap: 0.5em;
 }
 
-.form__title-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.form__input  {
+  padding: 0.5em;
+  border-radius: 15px;
+  color:black;
 }
 
-.form__input,
 .form__submit-button {
   padding: 0.5em;
   border-radius: 15px;
-}
-
-.form__input--text {
-  min-height: 150px;
-}
-
-.form__input--incomplete {
-  border: 1px solid var(--INPUT-INVALID);
-  outline: 1px solid var(--INPUT-INVALID);
 }
 
 .form__checkbox {
@@ -316,16 +268,10 @@ tr {
 .form__select {
   width: fit-content;
   padding: 0.25em;
+  color: red;
 }
 
-.form__action-buttons {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 0.5em;
-  position: absolute;
-  right: 0.5em;
-}
+
 
 .form__row {
   display: flex;
@@ -348,9 +294,7 @@ tr {
     gap: 0;
   }
 
-  .icon-button {
-    font-size: 1.5rem;
-  }
+  
 }
 
 
@@ -382,7 +326,5 @@ tr {
     display: block
   }
 
-  .form__action-buttons {
-    position: static;
-  }
+  
 }

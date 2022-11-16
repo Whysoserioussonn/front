@@ -1,6 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPenToSquare } from "@fortawesome/free-solid-svg-icons"
 import { useNavigate } from 'react-router-dom'
+import {FaEdit} from 'react-icons/fa'
 
 import { useSelector } from 'react-redux'
 import { selectUserById } from './usersApiSlice'
@@ -15,18 +14,18 @@ const User = ({ userId }) => {
 
         const userRolesString = user.roles.toString().replaceAll(',', ', ')
 
-        const cellStatus = user.active ? 'table__cell--active' : 'table__cell--inactive'
+        const cellStatus = user.active ? 'bg-green-700 text-white' : 'bg-red-700 text-yellow-300'
 
         return (
-            <tr className="table__row user">
-                <td className={`table__cell ${cellStatus}`}>{user.username}</td>
-                <td className={`table__cell ${cellStatus}`}>{userRolesString}</td>
-                <td className={`table__cell ${cellStatus}`}>
+            <tr>
+                <td class={`"bg-white p-2 border-2 broder-solid text-left ${cellStatus}`}>{user.username}</td>
+                <td class={`"bg-white p-2 border-2 broder-solid text-left ${cellStatus}`}>{userRolesString}</td>
+                <td class={`"bg-white p-2 border-2 broder-solid pl-24  ${cellStatus}`}>
                     <button
-                        className="icon-button table__button"
+                        class=" w-48px h-48px text-4xl hover:scale-150 hover:text-blue-700 pl-6"
                         onClick={handleEdit}
                     >
-                        <FontAwesomeIcon icon={faPenToSquare} />
+                        <FaEdit />
                     </button>
                 </td>
             </tr>

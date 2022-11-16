@@ -28,7 +28,7 @@ const NotesList = () => {
   />
 
     if (isError) {
-        content = <p className="errmsg">{error?.data?.message}</p>
+        content = <p class="inline-block bg-white text-red-700 p-1 mb-2">{error?.data?.message}</p>
     }
 
     if (isSuccess) {

@@ -71,8 +71,8 @@ const EditNoteForm = ({ note, users }) => {
     })
 
     const errClass = (isError || isDelError) ? "errmsg" : "offscreen"
-    const validTitleClass = !title ? "form__input--incomplete" : ''
-    const validTextClass = !text ? "form__input--incomplete" : ''
+    const validTitleClass = !title ? "border-2 border-red-500 outline-2 outline-cyan-500" : ''
+    const validTextClass = !text ? "border-2 border-red-500 outline-2 outline-cyan-500" : ''
 
     const errContent = (error?.data?.message || delerror?.data?.message) ?? ''
 
@@ -81,7 +81,7 @@ const EditNoteForm = ({ note, users }) => {
     if (isManager || isAdmin) {
         deleteButton = (
             <button
-                className="text-4xl hover:scale-125 hover:text-red-600"
+                class="text-4xl hover:scale-125 hover:text-red-600"
                 title="Delete"
                 onClick={onDeleteNoteClicked}
             >
@@ -94,8 +94,8 @@ const EditNoteForm = ({ note, users }) => {
         <>
             <p className={errClass}>{errContent}</p>
 
-            <form className="form" onSubmit={e => e.preventDefault()}>
-                <div className="form__title-row">
+            <form class="flex flex-col flex-nowrap max-w-screen-md gap-3" onSubmit={e => e.preventDefault()}>
+                <div class="flex justify-between items-center">
                     <h2>Repair Note #{note.ticket}</h2>
                     <div>
                         <button
@@ -109,7 +109,7 @@ const EditNoteForm = ({ note, users }) => {
                         {deleteButton}
                     </div>
                 </div>
-                <label className="form__label" htmlFor="note-title">
+                <label  htmlFor="note-title">
                     Location:</label>
                 <input
                     className={`form__input ${validTitleClass}`}
@@ -121,10 +121,10 @@ const EditNoteForm = ({ note, users }) => {
                     onChange={onTitleChanged}
                 />
 
-                <label className="form__label" htmlFor="note-text">
+                <label  htmlFor="note-text">
                     Problem:</label>
                 <textarea
-                    className={`form__input form__input--text ${validTextClass}`}
+                    className={`form__input h-40 ${validTextClass}`}
                     id="note-text"
                     name="text"
                     value={text}
@@ -132,7 +132,7 @@ const EditNoteForm = ({ note, users }) => {
                 />
                 <div className="form__row">
                     <div className="form__divider">
-                        <label className="form__label form__checkbox-container" htmlFor="note-completed">
+                        <label className=" form__checkbox-container" htmlFor="note-completed">
                             WORK COMPLETE:
                             <input
                                 className="form__checkbox"
@@ -144,7 +144,7 @@ const EditNoteForm = ({ note, users }) => {
                             />
                         </label>
 
-                        <label className="form__label form__checkbox-container" htmlFor="note-username">
+                        <label className=" form__checkbox-container" htmlFor="note-username">
                             ASSIGNED TO:</label>
                         <select
                             id="note-username"

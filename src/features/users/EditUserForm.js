@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react"
 import { useUpdateUserMutation, useDeleteUserMutation } from "./usersApiSlice"
 import { useNavigate } from "react-router-dom"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSave, faTrashCan } from "@fortawesome/free-solid-svg-icons"
+
 import { ROLES } from "../../config/roles"
+import {GiSave} from "react-icons/gi"
+import {FaTrashAlt} from "react-icons/fa"
 
 const USER_REGEX = /^[A-z]{3,20}$/
 const PWD_REGEX = /^[A-z0-9!@#$%]{4,12}$/
@@ -94,9 +95,9 @@ const EditUserForm = ({ user }) => {
     }
 
     const errClass = (isError || isDelError) ? "errmsg" : "offscreen"
-    const validUserClass = !validUsername ? 'form__input--incomplete' : ''
-    const validPwdClass = password && !validPassword ? 'form__input--incomplete' : ''
-    const validRolesClass = !Boolean(roles.length) ? 'form__input--incomplete' : ''
+    const validUserClass = !validUsername ? 'border-2 border-red-500 outline-2 outline-cyan-500' : ''
+    const validPwdClass = password && !validPassword ? 'border-2 border-red-500 outline-2 outline-cyan-500' : ''
+    const validRolesClass = !Boolean(roles.length) ? 'border-2 border-red-500 outline-2 outline-cyan-500' : ''
 
     const errContent = (error?.data?.message || delerror?.data?.message) ?? ''
 
@@ -105,29 +106,29 @@ const EditUserForm = ({ user }) => {
         <>
             <p className={errClass}>{errContent}</p>
 
-            <form className="form" onSubmit={e => e.preventDefault()}>
-                <div className="form__title-row">
+            <form class="flex flex-col flex-nowrap max-w-screen-md gap-3" onSubmit={e => e.preventDefault()}>
+                <div class="flex justify-between items-center">
                     <h2>Edit User</h2>
-                    <div className="form__action-buttons">
+                    <div class="gap-2 mr-2 flex justify-end items-center static">
                         <button
-                            className="icon-button"
+                            class="mt-2 text-4xl hover:scale-125 hover:text-blue-600 mr-2"
                             title="Save"
                             onClick={onSaveUserClicked}
                             disabled={!canSave}
                         >
-                            <FontAwesomeIcon icon={faSave} />
+                            <GiSave />
                         </button>
                         <button
-                            className="icon-button"
+                            class="text-4xl hover:scale-125 hover:text-red-600"
                             title="Delete"
                             onClick={onDeleteUserClicked}
                         >
-                            <FontAwesomeIcon icon={faTrashCan} />
+                            <FaTrashAlt />
                         </button>
                     </div>
                 </div>
-                <label className="form__label" htmlFor="username">
-                    Username: <span className="nowrap">[3-20 letters]</span></label>
+                <label  htmlFor="username">
+                    Username: <span class="whitespace-nowrap">[3-20 letters]</span></label>
                 <input
                     className={`form__input ${validUserClass}`}
                     id="username"
@@ -138,8 +139,8 @@ const EditUserForm = ({ user }) => {
                     onChange={onUsernameChanged}
                 />
 
-                <label className="form__label" htmlFor="password">
-                    Password: <span className="nowrap">[empty = no change]</span> <span className="nowrap">[4-12 chars incl. !@#$%]</span></label>
+                <label  htmlFor="password">
+                    Password: <span class="whitespace-nowrap">[empty = no change]</span> <span class="whitespace-nowrap">[4-12 chars incl. !@#$%]</span></label>
                 <input
                     className={`form__input ${validPwdClass}`}
                     id="password"
@@ -149,7 +150,7 @@ const EditUserForm = ({ user }) => {
                     onChange={onPasswordChanged}
                 />
 
-                <label className="form__label form__checkbox-container" htmlFor="user-active">
+                <label className=" form__checkbox-container" htmlFor="user-active">
                     ACTIVE:
                     <input
                         className="form__checkbox"
@@ -161,7 +162,7 @@ const EditUserForm = ({ user }) => {
                     />
                 </label>
 
-                <label className="form__label" htmlFor="roles">
+                <label  htmlFor="roles">
                     ASSIGNED ROLES:</label>
                 <select
                     id="roles"
